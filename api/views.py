@@ -1,7 +1,7 @@
-from django.shortcuts import render
-from .serializer import CategorySerializer
 from rest_framework import generics
-from .models import Category
+
+from .models import Category, Product
+from .serializer import CategorySerializer, ProductSerializer
 
 
 # Create your views here.
@@ -10,3 +10,8 @@ from .models import Category
 class CategoryListAPIView(generics.ListAPIView):
     queryset = Category.objects.all()
     serializer_class = CategorySerializer
+
+
+class ProductListAPIView(generics.ListAPIView):
+    queryset = Product.objects.all()
+    serializer_class = ProductSerializer
