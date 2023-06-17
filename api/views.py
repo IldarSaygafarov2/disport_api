@@ -24,7 +24,7 @@ class CategoryListAPIView(generics.ListAPIView):
     serializer_class = CategorySerializer
 
 
-class CategoryProductsAPIView(generics.RetrieveAPIView):
+class CategoryProductsAPIView(generics.ListAPIView):
     queryset = Category.objects.all()
     serializer_class = CategorySerializer
 
