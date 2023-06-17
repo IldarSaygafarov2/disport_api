@@ -1,0 +1,680 @@
+[
+  {
+    "model": "admin.logentry",
+    "pk": 1,
+    "fields": {
+      "action_time": "2023-06-17T08:32:06.918Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "1",
+      "object_repr": "Палатки",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 2,
+    "fields": {
+      "action_time": "2023-06-17T08:33:36.019Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "2",
+      "object_repr": "Теннисные столы",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 3,
+    "fields": {
+      "action_time": "2023-06-17T08:34:56.871Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "3",
+      "object_repr": "Велосипеды",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 4,
+    "fields": {
+      "action_time": "2023-06-17T08:37:14.755Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "4",
+      "object_repr": "Тренажеры",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 5,
+    "fields": {
+      "action_time": "2023-06-17T08:38:27.557Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "1",
+      "object_repr": "Палатка",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}, {\"added\": {\"name\": \"product image\", \"object\": \"ProductImage object (1)\"}}, {\"added\": {\"name\": \"product image\", \"object\": \"ProductImage object (2)\"}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 6,
+    "fields": {
+      "action_time": "2023-06-17T08:40:17.257Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "2",
+      "object_repr": "Теннисный стол",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}, {\"added\": {\"name\": \"product image\", \"object\": \"ProductImage object (3)\"}}, {\"added\": {\"name\": \"product image\", \"object\": \"ProductImage object (4)\"}}, {\"added\": {\"name\": \"product image\", \"object\": \"ProductImage object (5)\"}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 7,
+    "fields": {
+      "action_time": "2023-06-17T08:41:55.841Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "3",
+      "object_repr": "Велосипед",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}, {\"added\": {\"name\": \"product image\", \"object\": \"ProductImage object (6)\"}}, {\"added\": {\"name\": \"product image\", \"object\": \"ProductImage object (7)\"}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 8,
+    "fields": {
+      "action_time": "2023-06-17T08:45:21.304Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "4",
+      "object_repr": "Тренажер четкий",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}, {\"added\": {\"name\": \"product image\", \"object\": \"ProductImage object (8)\"}}, {\"added\": {\"name\": \"product image\", \"object\": \"ProductImage object (9)\"}}, {\"added\": {\"name\": \"product image\", \"object\": \"ProductImage object (10)\"}}]"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 1,
+    "fields": {
+      "name": "Can add log entry",
+      "content_type": 1,
+      "codename": "add_logentry"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 2,
+    "fields": {
+      "name": "Can change log entry",
+      "content_type": 1,
+      "codename": "change_logentry"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 3,
+    "fields": {
+      "name": "Can delete log entry",
+      "content_type": 1,
+      "codename": "delete_logentry"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 4,
+    "fields": {
+      "name": "Can view log entry",
+      "content_type": 1,
+      "codename": "view_logentry"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 5,
+    "fields": {
+      "name": "Can add permission",
+      "content_type": 2,
+      "codename": "add_permission"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 6,
+    "fields": {
+      "name": "Can change permission",
+      "content_type": 2,
+      "codename": "change_permission"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 7,
+    "fields": {
+      "name": "Can delete permission",
+      "content_type": 2,
+      "codename": "delete_permission"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 8,
+    "fields": {
+      "name": "Can view permission",
+      "content_type": 2,
+      "codename": "view_permission"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 9,
+    "fields": {
+      "name": "Can add group",
+      "content_type": 3,
+      "codename": "add_group"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 10,
+    "fields": {
+      "name": "Can change group",
+      "content_type": 3,
+      "codename": "change_group"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 11,
+    "fields": {
+      "name": "Can delete group",
+      "content_type": 3,
+      "codename": "delete_group"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 12,
+    "fields": {
+      "name": "Can view group",
+      "content_type": 3,
+      "codename": "view_group"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 13,
+    "fields": {
+      "name": "Can add user",
+      "content_type": 4,
+      "codename": "add_user"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 14,
+    "fields": {
+      "name": "Can change user",
+      "content_type": 4,
+      "codename": "change_user"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 15,
+    "fields": {
+      "name": "Can delete user",
+      "content_type": 4,
+      "codename": "delete_user"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 16,
+    "fields": {
+      "name": "Can view user",
+      "content_type": 4,
+      "codename": "view_user"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 17,
+    "fields": {
+      "name": "Can add content type",
+      "content_type": 5,
+      "codename": "add_contenttype"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 18,
+    "fields": {
+      "name": "Can change content type",
+      "content_type": 5,
+      "codename": "change_contenttype"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 19,
+    "fields": {
+      "name": "Can delete content type",
+      "content_type": 5,
+      "codename": "delete_contenttype"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 20,
+    "fields": {
+      "name": "Can view content type",
+      "content_type": 5,
+      "codename": "view_contenttype"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 21,
+    "fields": {
+      "name": "Can add session",
+      "content_type": 6,
+      "codename": "add_session"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 22,
+    "fields": {
+      "name": "Can change session",
+      "content_type": 6,
+      "codename": "change_session"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 23,
+    "fields": {
+      "name": "Can delete session",
+      "content_type": 6,
+      "codename": "delete_session"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 24,
+    "fields": {
+      "name": "Can view session",
+      "content_type": 6,
+      "codename": "view_session"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 25,
+    "fields": {
+      "name": "Can add category",
+      "content_type": 7,
+      "codename": "add_category"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 26,
+    "fields": {
+      "name": "Can change category",
+      "content_type": 7,
+      "codename": "change_category"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 27,
+    "fields": {
+      "name": "Can delete category",
+      "content_type": 7,
+      "codename": "delete_category"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 28,
+    "fields": {
+      "name": "Can view category",
+      "content_type": 7,
+      "codename": "view_category"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 29,
+    "fields": {
+      "name": "Can add product",
+      "content_type": 8,
+      "codename": "add_product"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 30,
+    "fields": {
+      "name": "Can change product",
+      "content_type": 8,
+      "codename": "change_product"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 31,
+    "fields": {
+      "name": "Can delete product",
+      "content_type": 8,
+      "codename": "delete_product"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 32,
+    "fields": {
+      "name": "Can view product",
+      "content_type": 8,
+      "codename": "view_product"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 33,
+    "fields": {
+      "name": "Can add product image",
+      "content_type": 9,
+      "codename": "add_productimage"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 34,
+    "fields": {
+      "name": "Can change product image",
+      "content_type": 9,
+      "codename": "change_productimage"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 35,
+    "fields": {
+      "name": "Can delete product image",
+      "content_type": 9,
+      "codename": "delete_productimage"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 36,
+    "fields": {
+      "name": "Can view product image",
+      "content_type": 9,
+      "codename": "view_productimage"
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 1,
+    "fields": {
+      "password": "pbkdf2_sha256$600000$fNaV8twa1KqnuZVxVQg1Yr$ioV9IriohqARZ8hZS1XCvf6ObV4YorIdDbKyyPGLgAE=",
+      "last_login": "2023-06-17T08:31:06.622Z",
+      "is_superuser": true,
+      "username": "admin",
+      "first_name": "",
+      "last_name": "",
+      "email": "admin@gmail.com",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2023-06-17T08:30:52.174Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 1,
+    "fields": {
+      "app_label": "admin",
+      "model": "logentry"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 2,
+    "fields": {
+      "app_label": "auth",
+      "model": "permission"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 3,
+    "fields": {
+      "app_label": "auth",
+      "model": "group"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 4,
+    "fields": {
+      "app_label": "auth",
+      "model": "user"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 5,
+    "fields": {
+      "app_label": "contenttypes",
+      "model": "contenttype"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 6,
+    "fields": {
+      "app_label": "sessions",
+      "model": "session"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 7,
+    "fields": {
+      "app_label": "api",
+      "model": "category"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 8,
+    "fields": {
+      "app_label": "api",
+      "model": "product"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 9,
+    "fields": {
+      "app_label": "api",
+      "model": "productimage"
+    }
+  },
+  {
+    "model": "sessions.session",
+    "pk": "4qdzv8u7nilq0if82vvck01ilbf79ae7",
+    "fields": {
+      "session_data": ".eJxVjMsOwiAQRf-FtSGDUGFcuu83kBkeUjWQlHZl_HfbpAvdnnPufQtP61L82tPspyiuQonTL2MKz1R3ER9U702GVpd5Yrkn8rBdji2m1-1o_w4K9bKtA2s8I2tF5DCDAhvQXAyiVtpwNggE2tlkaQhsXY4RBlARSKWUNyw-X8r2N6I:1qARKs:KbnZNEh1saL4Z6WN9dlu1u3Tc3kDdbcd9-ORB0yhY9U",
+      "expire_date": "2023-07-01T08:31:06.635Z"
+    }
+  },
+  {
+    "model": "api.category",
+    "pk": 1,
+    "fields": {
+      "title": "Палатки",
+      "photo": "photos/categories/pngwing.com.png"
+    }
+  },
+  {
+    "model": "api.category",
+    "pk": 2,
+    "fields": {
+      "title": "Теннисные столы",
+      "photo": "photos/categories/d49f348f78fd9324ab71ea125d465825.png"
+    }
+  },
+  {
+    "model": "api.category",
+    "pk": 3,
+    "fields": {
+      "title": "Велосипеды",
+      "photo": "photos/categories/velopised.png"
+    }
+  },
+  {
+    "model": "api.category",
+    "pk": 4,
+    "fields": {
+      "title": "Тренажеры",
+      "photo": "photos/categories/d49f348f78fd9324ab71ea125d465825_qqQxb8y.png"
+    }
+  },
+  {
+    "model": "api.product",
+    "pk": 1,
+    "fields": {
+      "title": "Палатка",
+      "price": 3228000,
+      "body": "Двухместная туристическая палатка – это идеальный вариант для двух человек, которые хотят отдохнуть на природе. Эта палатка сделана из высококачественных материалов, что делает ее прочной, долговечной и устойчивой к погодным условиям. Палатка в сложенном виде имеет очень компактные размеры, а также поставляется со специальным кожухом с удобными ручками для транспортировки.\r\n\r\nРазмеры: 2,0х1,50х1,25м\r\n\r\nКронштейн: автоматический стержень из стекловолокна 7,9мм",
+      "category": 1
+    }
+  },
+  {
+    "model": "api.product",
+    "pk": 2,
+    "fields": {
+      "title": "Теннисный стол",
+      "price": 1313000,
+      "body": "Теннисный стол SPONETA S 5-73 e — прекрасно подходит для школ спортивных клубов. Конструкция стола позволяет тренироваться в одиночку Подходит для использования на открытом воздухе. Защищен от неблагоприятных погодных условий.\r\n\r\n\r\n\r\nО МОДЕЛИ\r\n\r\n\r\n\r\nСтол / Рама:\r\n\r\n● Меламиновая пластина 6 мм\r\n\r\n● Цвет: синий\r\n\r\nЗащищен от легких ударов\r\n\r\n● Высокая устойчивость к влаге\r\n\r\n● Очень стабильный\r\n\r\n● Профиль рамы L-50 мм Низ\r\n\r\n● Четырехугольный профиль 50 x 30 мм, с порошковым покрытием\r\n\r\n● 4 двойных колеса (диаметр 125 мм) с резиновым протектором ● Все колеса являются маневренными\r\n\r\n● Держатели ракеток и мячиков с обеих сторон\r\n\r\n● Баланс разных стоячих положений и регулировка неровности высотой до 30 мм на внешних ножках Система блокировки:\r\n\r\n● Система блокировки: SMS (Smart Manual System)\r\n\r\n● Ручка видима со всех сторон и в любом положении\r\n\r\n● Сцепное устройство под столешницей разблокирует оба предохранительных устройств одновременно\r\n\r\n● Простой и автоматический щелчок-механизм для хранения и разложения стола Размер:\r\n\r\n● Размер стола: 274 x 152,5 x 76 см\r\n\r\n● Размер свернутого стола: 152,5 x 69,5 x 155 см\r\n\r\n● Вес: 70 кг Сетка:\r\n\r\n● Сетка черная с отверстием Ø 8 мм\r\n\r\n● Растянутый кабель с крючками для затягивания на верхнем краю сетки\r\n\r\n● Размер: I ~ 180 см x A 15,2 см\r\n\r\n● Вес: 0,76 кг",
+      "category": 2
+    }
+  },
+  {
+    "model": "api.product",
+    "pk": 3,
+    "fields": {
+      "title": "Велосипед",
+      "price": 19284000,
+      "body": "Велотренажер MATRIX UЗOXR - это вертикальный велоэргометр, который способен подарить любому человеку уверенность в себе, а также одновременно с этим привести его тело в отличную физическую форму. Велотренажер великолепно подходит для домашнего применения.\r\nМодель доступна и для домашнего использования. Она прекрасно подойдет для тех пользователей, которые намерены получить аналогичный результат, что и при посещении современного фитнес центра. В действительности велотренажер UЗOXR обладает многочисленными преимуществами. А вот его использование является легкой и максимально безопасной процедурой. В связи с возникновением на рынке такой модели тренажера, тренировки в комфортной обстановке являются обеспеченными. Больше не нужно посещать различные клубы, достаточно приобрести данную модель велотренажера.\r\nMATRIX UЗOXR - это домашний велотренажер, который обладает 8,5-дюймовым дисплеем. Также здесь имеется и голубая подсветка. Сам дисплей способен отображать полностью все главные показатели.\r\nСдвоенные стойки рамы обеспечат максимальную устойчивость тренажера\r\nСиденье Comfort Аге™ эргономически сконструировано таким образом, чтобы обеспечить максимальный комфорт, поддержку и баланс во время тренировок\r\nВы можете присоединить рукоятки, сиденье и педали шоссейного велосипеда, чтобы максимально смоделировать реальную гонку\r\nУдобно расположенный подстаканник для бутылок разного размера\r\nРукоятки регулируются очень просто с помощью рычажка \"вверх-вниз\", а сиденье с помощью рычажка \"поверни-потяни\" для идеального положения во время длительных тренировок\r\nХАРАКТЕРИСТИКИ:\r\nКОНСОЛЬ\r\n● Вид дисплея: 8,5-дюймовый (22 см.) LCD дисплей с голубой подсветкой\r\n● Показания консоли: пройденное время, оставшееся время, мили/километры, об./мин., темп, пульс, калории, метаболические единицы (METS), скорость, нагрузка\r\n● Языки консоли: английский\r\n● Перечень программ: ручной режим, интервальная, постоянные Ватты, пульсозависимая, Sprint 8\r\n● Специальные программные возможности: облачный сервис мониторинга тренировок VIEWFIT, Passport™ Ready\r\n● Интеграция: USB (обновление ПО)\r\n● Кол-во уровней нагрузки : 20\r\n● Вентилятор: нет\r\n● Интернет: нет\r\nКОНСТРУКЦИЯ\r\n● Рама: высокопрочная износостойкая с двухслойной покраской и лакировкой\r\n● Посадка: вертикальная\r\n● Сидение : эргономичное Comfort Arc™, заменяемое\r\n● Регулировка положения сидения : по вертикали\r\n● Регулировка положения руля : по высоте\r\n● Система нагружения: электромагнитный (ЕСВ magnetic braking system)\r\n● Маховик: 23,1 кг\r\n● Питание: сеть 220 Вольт\r\nТЕХНИЧЕСКИЕ ХАРАКТЕРИСТИКИ\r\n● Размеры модели (Д х Ш х В): 122*62*143 см.\r\n● Максимальный вес пользователя: до 159 кг.\r\n● Вес тренажера: 52 кг.",
+      "category": 3
+    }
+  },
+  {
+    "model": "api.product",
+    "pk": 4,
+    "fields": {
+      "title": "Тренажер четкий",
+      "price": 123456,
+      "body": "Основная особенность тренировки на гребном тренажере - безударная нагрузка на все группы мышц. Новое поколение HORIZON™ Oxford 6 позволит провести полноценную тренировку, не выходя из дома. Биомеханика тренажера максимально естественна, а каждое движение эффективно. Oxford 6 оснащен эргономичным сиденьем, которое подойдет широкому кругу пользователей. Каждая тренировка будет невероятно комфортной.\r\nК основным особенностям Oxford 6 можно отнести:\r\n● удлиненный алюминиевый рельс, магнитное сопротивление с 20 уровнями нагрузки и плавный приводной ремень;\r\n● электронная регулировка магнитного сопротивления;\r\n● возможность подключения к ViewFit для отслеживания результатов и мониторинга тренировок;\r\n● оптимизированная высота сиденья и устойчивая конструкция рамы;\r\n● возможность вертикального хранения для экономии пространства;\r\n● беспроводной приемник сердечного ритма Polar;\r\nХарактеристики:\r\n● Назначение домашнее\r\n● Рама высокопрочная алюминиевая монорельса\r\n● Система нагружения электромагнитная бесконтактная ECB\r\n● Кол-во уровней нагрузки 20\r\n● Сидение контурное эргономичное\r\n● Измерение пульса беспроводной Polar приемник\r\n● Консоль 5.4-дюймовый (13.7 см.) многофункциональный LCD дисплей с голубой подсветкой\r\n● Показания консоли время, дистанция, калории, гребки/мин., гребки, пульс, Ватты, отрезки (500 м.)\r\n● Кол-во программ 12\r\n● Спецификации программ ручной режим, снижение веса, дистанция, интервальная (время, дистанция), интервальная (выносливость, скорость), гонка (начальный, средний, продвинутый), пульс (максимальный, целевая по пульсу)\r\n● Статистика тренировок подключение к облачному сервису сохранения результатов тренировок VIEWFIT\r\n● Мультимедиа приложение FitDisplay, Sprint 8, Виртуальный ландшафт\r\n● Интеграция нет\r\n● Интернет нет\r\n● Язык(и) интерфейса английский\r\n● Складывание возможность вертикального хранения\r\n● Транспортировочные ролики есть\r\n● Компенсаторы неровностей пола есть\r\n● Размер в рабочем состоянии (Д*Ш*В) 211*62*110 см.\r\n● Вес нетто 41 кг.\r\n● Макс. вес пользователя 159 кг.\r\n● Питание не требует подключения к сети",
+      "category": 4
+    }
+  },
+  {
+    "model": "api.productimage",
+    "pk": 1,
+    "fields": {
+      "product": 1,
+      "photo": "photos/products/velopised.png"
+    }
+  },
+  {
+    "model": "api.productimage",
+    "pk": 2,
+    "fields": {
+      "product": 1,
+      "photo": "photos/products/d49f348f78fd9324ab71ea125d465825.png"
+    }
+  },
+  {
+    "model": "api.productimage",
+    "pk": 3,
+    "fields": {
+      "product": 2,
+      "photo": "photos/products/d49f348f78fd9324ab71ea125d465825_6f6kYQR.png"
+    }
+  },
+  {
+    "model": "api.productimage",
+    "pk": 4,
+    "fields": {
+      "product": 2,
+      "photo": "photos/products/d49f348f78fd9324ab71ea125d465825_LDYye5x.png"
+    }
+  },
+  {
+    "model": "api.productimage",
+    "pk": 5,
+    "fields": {
+      "product": 2,
+      "photo": "photos/products/d49f348f78fd9324ab71ea125d465825_eBZHslh.png"
+    }
+  },
+  {
+    "model": "api.productimage",
+    "pk": 6,
+    "fields": {
+      "product": 3,
+      "photo": "photos/products/velopised_3l55XcS.png"
+    }
+  },
+  {
+    "model": "api.productimage",
+    "pk": 7,
+    "fields": {
+      "product": 3,
+      "photo": "photos/products/velopised_MMIKBFN.png"
+    }
+  },
+  {
+    "model": "api.productimage",
+    "pk": 8,
+    "fields": {
+      "product": 4,
+      "photo": "photos/products/d49f348f78fd9324ab71ea125d465825_yubpHTk.png"
+    }
+  },
+  {
+    "model": "api.productimage",
+    "pk": 9,
+    "fields": {
+      "product": 4,
+      "photo": "photos/products/velopised_uHnCaTU.png"
+    }
+  },
+  {
+    "model": "api.productimage",
+    "pk": 10,
+    "fields": {
+      "product": 4,
+      "photo": "photos/products/Без_имени-1.png"
+    }
+  }
+]
