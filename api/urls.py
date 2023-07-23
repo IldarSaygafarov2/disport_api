@@ -8,5 +8,6 @@ urlpatterns = [
     path("categories/<int:pk>/", views.CategoryProductsAPIView.as_view()),
     path("products/", views.ProductListAPIView.as_view()),
     path("products/<int:pk>/", views.ProductDetailAPIView.as_view()),
+    path("animation/", views.get_animations)
 ]
 
