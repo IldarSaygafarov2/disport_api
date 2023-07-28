@@ -16,6 +16,8 @@ class Product(models.Model):
     title = models.CharField(verbose_name="Название продукта", max_length=255, unique=True)
     price = models.IntegerField(verbose_name="Стоимость продукта")
     body = models.TextField(verbose_name="Описание продукта", default="")
+    # brand = models.CharField(verbose_name="Бренд", max_length=150, default="")
+
     category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name="products", verbose_name="Категория")
 
     def __str__(self):
