@@ -15,6 +15,10 @@ class Category(models.Model):
     def __str__(self):
         return self.title
 
+    class Meta:
+        verbose_name = "Категория"
+        verbose_name_plural = "Категории"
+
 
 class Product(models.Model):
     title = models.CharField(
@@ -34,6 +38,10 @@ class Product(models.Model):
 
     def __str__(self):
         return self.title
+
+    class Meta:
+        verbose_name = "Продукт"
+        verbose_name_plural = "Продукты"
 
 
 class ProductImage(models.Model):
