@@ -1,7 +1,8 @@
-from django.core.management.base import BaseCommand, CommandError
-from api.models import Category, Product
-from helpers.main import get_data_from_workbook
+from django.core.management.base import BaseCommand
 from django.db.utils import IntegrityError
+
+from api.models import Category, Product, ProductImage
+from helpers.main import get_data_from_workbook
 
 
 class Command(BaseCommand):
@@ -29,7 +30,7 @@ class Command(BaseCommand):
                 try:
                     obj = Product.objects.create(
                         title=item["model"],
-                        price=10_000,
+                        price=100_000,
                         body=item["body"],
                         vendor_code=item["vendor"],
                         brand=item["brand"],
@@ -37,10 +38,17 @@ class Command(BaseCommand):
                         category=category,
                     )
                     obj.save()
+                    for _ in range(4):
+                        photo = ProductImage.objects.create(
+                            product=obj,
+                            photo="static/placeholder.png"
+                        )
+                        photo.save()
+
                     print(f"Added product {obj.title}")
                 except IntegrityError:
                     print("Added already")
                     continue
-                except ValueError:
-                    print("uncorrect value")
+                except ValueError as v:
+                    print("not correct value", v)
                     continue

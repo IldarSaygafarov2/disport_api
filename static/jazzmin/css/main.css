@@ -925,3 +925,7 @@ body.jazzmin-login-page {
     float: left;
     width: 100%;
 }
+
+.no-shadow {
+    box-shadow: none !important;
+}

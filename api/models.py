@@ -29,6 +29,7 @@ class Product(models.Model):
     brand = models.CharField(verbose_name="Бренд", max_length=150, default="")
     vendor_code = models.IntegerField(verbose_name="Артикул", default=0)
     gender = models.CharField(verbose_name="Пол", max_length=150, default="")
+    preview = models.ImageField(verbose_name="Заставка", upload_to="preview", blank=True, null=True)
     category = models.ForeignKey(
         Category,
         on_delete=models.CASCADE,
@@ -48,7 +49,5 @@ class ProductImage(models.Model):
     def make_folder_path(self, filename):
         return f"photos/products/{filename}"
 
-    product = models.ForeignKey(
-        Product, on_delete=models.CASCADE, related_name="images", verbose_name="Продукт"
-    )
+    product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name="images", verbose_name="Продукт")
     photo = models.ImageField(verbose_name="Фото продукта", upload_to=make_folder_path)

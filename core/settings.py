@@ -151,7 +151,7 @@ JAZZMIN_SETTINGS = {
     "login_logo_dark": None,
 
     # CSS classes that are applied to the logo above
-    "site_logo_classes": "",
+    "site_logo_classes": "no-shadow",
 
     # Relative path to a favicon for your site, will default to site_logo if absent (ideally 32x32 px)
     "site_icon": None,

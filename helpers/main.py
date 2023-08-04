@@ -1,4 +1,6 @@
 from openpyxl import load_workbook
+import xml.etree.ElementTree as ET
+import re
 
 
 def get_data_from_workbook(filename: str):
@@ -20,3 +22,19 @@ def get_data_from_workbook(filename: str):
             }
         )
     return data
+
+
+def format_price(price: int):
+    price = f"{price:_}".replace("_", " ")
+    return f"{price} UZS"
+
+
+def remove_html_from_text(text: str):
+    pattern = re.compile('<.*?>')
+    result = re.sub(pattern, '', text)
+    return result
+
+
+
+
+

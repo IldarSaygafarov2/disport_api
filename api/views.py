@@ -1,17 +1,14 @@
-import json
 import os
 
 from django.http import JsonResponse
+from django.templatetags.static import static
 from rest_framework import generics
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
-
+from helpers import main as funcs
 from core import settings
 from .models import Category, Product
 from .serializer import CategorySerializer, ProductSerializer
-from django.templatetags.static import static
-
-# Create your views here.
 
 
 @api_view(["GET"])
@@ -36,10 +33,11 @@ class CategoryListAPIView(generics.ListAPIView):
                 {
                     "product": {
                         "title": product.title,
-                        "price": product.price,
-                        "description": product.body,
+                        "price": funcs.format_price(product.price),
+                        "description": funcs.remove_html_from_text(product.body),
+                        "preview": product.preview.url if product.preview else "static/placeholder.png",
                         "images": [
-                            image.photo.url if image.photo else ""
+                            image.photo.url if image.photo else "static/placeholder.png"
                             for image in product.images.all()
                         ],
                     }
@@ -49,7 +47,7 @@ class CategoryListAPIView(generics.ListAPIView):
 
             item = {
                 "title": category.title,
-                "photo": category.photo.url if category.photo else "",
+                "photo": category.photo.url if category.photo else "static/placeholder.png",
                 "products": products,
             }
             data["categories"].append(item)
