@@ -51,3 +51,23 @@ class ProductImage(models.Model):
 
     product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name="images", verbose_name="Продукт")
     photo = models.ImageField(verbose_name="Фото продукта", upload_to=make_folder_path)
+
+
+# class ProductCharacteristicsTitle(models.Model):
+#     product = models.ForeignKey(Product, on_delete=models.CASCADE)
+#     label = models.CharField(max_length=150)
+#
+#
+# class ProductCharacteristicsOptions(models.Model):
+#     product = models.ForeignKey(Product, on_delete=models.CASCADE)
+#     options = models.CharField(max_length=150)
+
+
+class CategoryCharacteristics(models.Model):
+    product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name="characteristics")
+    title = models.CharField(max_length=150)
+
+
+class CategoryCharacteristicsOptions(models.Model):
+    product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name="options", default=None)
+    option = models.CharField(max_length=150, default="")
