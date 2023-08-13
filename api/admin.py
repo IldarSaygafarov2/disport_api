@@ -1,7 +1,7 @@
 from django.contrib import admin
 
 from .models import Category, Product, ProductImage, CategoryCharacteristics, CategoryCharacteristicsOptions
-from nested_admin.nested import NestedStackedInline, NestedTabularInline
+import nested_admin
 
 
 # Register your models here.
@@ -18,35 +18,40 @@ class ProductImageInline(admin.TabularInline):
     extra = 1
 
 
-class CategoryCharacteristicsOptionsInline(admin.StackedInline):
+class ProductOptionsInline(nested_admin.NestedStackedInline):
     model = CategoryCharacteristicsOptions
-    extra = 1
 
 
-class CategoryCharacteristicsInline(admin.StackedInline):
+class OptionsInline(nested_admin.NestedStackedInline):
     model = CategoryCharacteristics
-    extra = 1
-    inlines = [CategoryCharacteristicsOptionsInline]
+    inlines = [ProductOptionsInline]
+
+# class CategoryCharacteristicsOptionsInline(nested_admin.):
+#     model = CategoryCharacteristicsOptions
+#     extra = 1
+
+#
+# class CategoryCharacteristicsInline(admin.StackedInline):
+#     model = CategoryCharacteristics
+#     extra = 1
+#     inlines = [CategoryCharacteristicsOptionsInline]
 
 
 @admin.register(Product)
 class ProductAdmin(admin.ModelAdmin):
-    list_display = ("pk", "title", "price", "brand", "category")
-    list_editable = ("price", "brand", "category")
-    list_display_links = ("pk", "title")
+    # list_display = ("pk", "title", "price", "brand", "category")
+    # list_editable = ("price", "brand", "category")
+    # list_display_links = ("pk", "title")
+
+    inlines = [ProductImageInline,]
+
+    fieldsets = [
+        (
+            "Общее",
+            {
+                "fields": ["title", "price", "brand", "vendor_code", "gender", "preview", "category"]
+            }
+        )
+    ]
+
     list_filter = ("category", "brand")
-    # fieldsets = [
-    #     (
-    #         "Общие данные товара",
-    #         {
-    #             "fields": ['title', 'body', "price", "brand", "category"]
-    #         },
-    #     ),
-    #     (
-    #         "Характеристики",
-    #         {
-    #             "fields": []
-    #         },
-    #     ),
-    # ]
-    inlines = [ProductImageInline, CategoryCharacteristicsInline]
