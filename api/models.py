@@ -50,11 +50,6 @@ class ProductImage(models.Model):
     photo = models.ImageField(verbose_name="Фото продукта", upload_to=make_folder_path)
 
 
-class CategoryCharacteristics(models.Model):
-    product = models.OneToOneField(Product, on_delete=models.CASCADE, related_name="characteristics")
-    title = models.CharField(max_length=150)
 
 
-class CategoryCharacteristicsOptions(models.Model):
-    product = models.OneToOneField(Product, on_delete=models.CASCADE, related_name="options", default=None)
-    option = models.CharField(max_length=150, default="")
+
