@@ -28,14 +28,16 @@ class CategoryListAPIView(generics.ListAPIView):
 
     def get(self, request, *args, **kwargs):
         data = {"categories": []}
+
         for category in self.get_queryset():
             products_qs = Product.objects.filter(category=category)
             characteristics = [product.options.all() for product in products_qs]
+
             options = [{
                 "option_category": char.option_main,
                 "option_items": [option.name for option in char.option.all()]
-            } for char in characteristics[0]]
-            print(options)
+            } for char in characteristics[0]] if characteristics else []
+
             products = [
                 {
                     "product": {
