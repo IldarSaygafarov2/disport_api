@@ -29,6 +29,13 @@ class CategoryListAPIView(generics.ListAPIView):
     def get(self, request, *args, **kwargs):
         data = {"categories": []}
         for category in self.get_queryset():
+            products_qs = Product.objects.filter(category=category)
+            characteristics = [product.options.all() for product in products_qs]
+            options = [{
+                "option_category": char.option_main,
+                "option_items": [option.name for option in char.option.all()]
+            } for char in characteristics[0]]
+            print(options)
             products = [
                 {
                     "product": {
@@ -36,13 +43,14 @@ class CategoryListAPIView(generics.ListAPIView):
                         "price": funcs.format_price(product.price),
                         "description": funcs.remove_html_from_text(product.body),
                         "preview": product.preview.url if product.preview else "static/placeholder.png",
+                        "options": options,
                         "images": [
                             image.photo.url if image.photo else "static/placeholder.png"
                             for image in product.images.all()
                         ],
                     }
                 }
-                for product in Product.objects.filter(category=category)
+                for product in products_qs
             ]
 
             item = {

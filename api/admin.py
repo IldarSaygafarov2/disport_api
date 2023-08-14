@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Category, Product, ProductImage
+from .models import Category, Product, ProductImage, ProductOption, ProductOptionItem
 
 
 # Register your models here.
@@ -15,6 +15,24 @@ class CategoryAdmin(admin.ModelAdmin):
 class ProductImageInline(admin.TabularInline):
     model = ProductImage
     extra = 1
+
+
+class ProductOptionItemInline(admin.TabularInline):
+    model = ProductOptionItem
+    extra = 1
+
+
+@admin.register(ProductOption)
+class ProductOptionAdmin(admin.ModelAdmin):
+    inlines = [ProductOptionItemInline,]
+    fieldsets = [
+        (
+            "Общее",
+            {
+                "fields": ["product", "option_main"]
+            }
+        )
+    ]
 
 
 @admin.register(Product)

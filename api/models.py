@@ -50,6 +50,23 @@ class ProductImage(models.Model):
     photo = models.ImageField(verbose_name="Фото продукта", upload_to=make_folder_path)
 
 
+class ProductOption(models.Model):
+    product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name="options",
+                                verbose_name="Название продукта")
+    option_main = models.CharField(verbose_name="Основная характеристика", max_length=155)
+
+    def __str__(self):
+        return f"{self.product}: {self.option_main}"
+
+    class Meta:
+        verbose_name = "Основная характеристика"
+        verbose_name_plural = "Основные характеристики"
 
 
+class ProductOptionItem(models.Model):
+    product_option = models.ForeignKey(ProductOption, on_delete=models.CASCADE, related_name="option")
+    name = models.CharField(verbose_name="Дополнительная характеристика", max_length=155)
 
+    class Meta:
+        verbose_name = "Дополнительная характеристика"
+        verbose_name_plural = "Дополнительные характеристики"
