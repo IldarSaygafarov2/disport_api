@@ -40,6 +40,7 @@ class Product(models.Model):
     class Meta:
         verbose_name = "Продукт"
         verbose_name_plural = "Продукты"
+        ordering = ['pk']
 
 
 class ProductImage(models.Model):
@@ -65,7 +66,7 @@ class ProductOption(models.Model):
 
 class ProductOptionItem(models.Model):
     product_option = models.ForeignKey(ProductOption, on_delete=models.CASCADE, related_name="option")
-    name = models.CharField(verbose_name="Дополнительная характеристика", max_length=155)
+    name = models.TextField(verbose_name="Дополнительная характеристика", max_length=155)
 
     class Meta:
         verbose_name = "Дополнительная характеристика"

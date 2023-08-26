@@ -37,9 +37,9 @@ class ProductOptionAdmin(admin.ModelAdmin):
 
 @admin.register(Product)
 class ProductAdmin(admin.ModelAdmin):
-    # list_display = ("pk", "title", "price", "brand", "category")
-    # list_editable = ("price", "brand", "category")
-    # list_display_links = ("pk", "title")
+    list_display = ("pk", "title", "price", "vendor_code", "brand", "category")
+    list_editable = ("price", "brand", "vendor_code", "category")
+    list_display_links = ("pk", "title")
 
     inlines = [ProductImageInline, ]
 

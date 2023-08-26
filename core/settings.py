@@ -42,6 +42,7 @@ INSTALLED_APPS = [
 
     "rest_framework",
     "api",
+    "django_dump_load_utf8"
 ]
 
 MIDDLEWARE = [
