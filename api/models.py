@@ -24,7 +24,7 @@ class Product(models.Model):
     price = models.IntegerField(verbose_name="Стоимость продукта")
     body = models.TextField(verbose_name="Описание продукта", default="")
     brand = models.CharField(verbose_name="Бренд", max_length=150, default="")
-    vendor_code = models.IntegerField(verbose_name="Артикул", default=0)
+    vendor_code = models.CharField(verbose_name="Артикул", default='', max_length=150)
     gender = models.CharField(verbose_name="Пол", max_length=150, default="")
     preview = models.ImageField(verbose_name="Заставка", upload_to="preview", blank=True, null=True)
     category = models.ForeignKey(
