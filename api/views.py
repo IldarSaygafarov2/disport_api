@@ -58,6 +58,7 @@ class CategoryListAPIView(generics.ListAPIView):
             item = {
                 "title": category.title,
                 "photo": category.photo.url if category.photo else "static/placeholder.png",
+                'video': category.video.url if category.video else None,
                 "products": products,
             }
             data["categories"].append(item)

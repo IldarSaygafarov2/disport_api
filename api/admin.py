@@ -47,9 +47,9 @@ class ProductAdmin(admin.ModelAdmin):
         (
             "Общее",
             {
-                "fields": ["title", "price", "brand", "vendor_code", "gender", "preview", "category"]
-            }
-        )
+                "fields": ["title", "price", "brand", "vendor_code", "gender",  "category"]
+            },
+        ),
     ]
 
     list_filter = ("category", "brand")

@@ -5,9 +5,11 @@ class Category(models.Model):
     title = models.CharField(
         verbose_name="Название категории", max_length=150, unique=True
     )
-    photo = models.ImageField(
-        verbose_name="Фото категории", upload_to="photos/categories/"
+    photo = models.FileField(
+        verbose_name="Фото категории", upload_to="photos/categories/", default=""
     )
+
+    video = models.FileField(verbose_name="Видео", upload_to="categories/video/", null=True, blank=True)
 
     def __str__(self):
         return self.title
@@ -27,6 +29,7 @@ class Product(models.Model):
     vendor_code = models.CharField(verbose_name="Артикул", default='', max_length=150)
     gender = models.CharField(verbose_name="Пол", max_length=150, default="")
     preview = models.ImageField(verbose_name="Заставка", upload_to="preview", blank=True, null=True)
+
     category = models.ForeignKey(
         Category,
         on_delete=models.CASCADE,

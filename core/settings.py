@@ -270,3 +270,6 @@ JAZZMIN_SETTINGS = {
     # Add a language dropdown into the admin
     "language_chooser": False,
 }
+
+
+IMAGE_FIELD_MAX_FILE_SIZE = 1000000

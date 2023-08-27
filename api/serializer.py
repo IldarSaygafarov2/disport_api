@@ -22,4 +22,4 @@ class CategorySerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Category
-        fields = ("pk", "title", "photo", "products")
+        fields = ("pk", "title", "photo", "svg_file", "products")
