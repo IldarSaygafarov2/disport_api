@@ -28,41 +28,39 @@ class CategoryListAPIView(generics.ListAPIView):
 
     def get(self, request, *args, **kwargs):
         data = {"categories": []}
-
         for category in self.get_queryset():
-            products_qs = Product.objects.filter(category=category)
-            characteristics = [product.options.all() for product in products_qs]
+            products_list = []
+            products = category.products.all()
+            for product in products:
+                options = [option for option in product.options.all()]
+                res = []
+                if options:
+                    for option in options:
+                        res.append({
+                            "option_category": option.option_main,
+                            "option_items": option.option.all()[0].name
+                        })
 
-            options = [{
-                "option_category": char.option_main,
-                "option_items": [option.name for option in char.option.all()]
-            } for char in characteristics[0]] if characteristics else []
-
-            products = [
-                {
+                products_list.append({
                     "product": {
                         "title": product.title,
                         "price": funcs.format_price(product.price),
                         "description": funcs.remove_html_from_text(product.body),
                         "preview": product.preview.url if product.preview else "static/placeholder.png",
-                        "options": options,
+                        "options": res,
                         "images": [
                             image.photo.url if image.photo else "static/placeholder.png"
                             for image in product.images.all()
                         ],
                     }
-                }
-                for product in products_qs
-            ]
+                })
 
-            item = {
+            data["categories"].append({
                 "title": category.title,
                 "photo": category.photo.url if category.photo else "static/placeholder.png",
                 'video': category.video.url if category.video else None,
-                "products": products,
-            }
-            data["categories"].append(item)
-
+                "products": products_list
+            })
         return Response(data)
 
 
