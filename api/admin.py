@@ -25,6 +25,7 @@ class ProductOptionItemInline(admin.TabularInline):
 @admin.register(ProductOption)
 class ProductOptionAdmin(admin.ModelAdmin):
     inlines = [ProductOptionItemInline,]
+    list_filter = ['product']
     fieldsets = [
         (
             "Общее",
@@ -47,7 +48,7 @@ class ProductAdmin(admin.ModelAdmin):
         (
             "Общее",
             {
-                "fields": ["title", "price", "brand", "vendor_code", "gender",  "category"]
+                "fields": ["title", "body", "price", "preview", "video", "brand", "vendor_code", "gender",  "category"]
             },
         ),
     ]

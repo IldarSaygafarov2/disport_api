@@ -1,3 +1,4 @@
+
 """
 Django settings for core project.
 
@@ -26,7 +27,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     "disport.pythonanywhere.com",
-    "127.0.0.1"
+    "127.0.0.1",
+    'umerovzafar.pythonanywhere.com'
 ]
 
 # Application definition

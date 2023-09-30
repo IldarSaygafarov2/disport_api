@@ -36,6 +36,7 @@ class CategoryListAPIView(generics.ListAPIView):
                 res = []
                 if options:
                     for option in options:
+                        print(option.option.all())
                         res.append({
                             "option_category": option.option_main,
                             "option_items": option.option.all()[0].name
@@ -46,7 +47,8 @@ class CategoryListAPIView(generics.ListAPIView):
                         "title": product.title,
                         "price": funcs.format_price(product.price),
                         "description": funcs.remove_html_from_text(product.body),
-                        "preview": product.preview.url if product.preview else "static/placeholder.png",
+                 	"video": product.video.url if product.video else 'no video',
+		        "preview": product.preview.url if product.preview else "static/placeholder.png",
                         "options": res,
                         "images": [
                             image.photo.url if image.photo else "static/placeholder.png"
@@ -58,7 +60,7 @@ class CategoryListAPIView(generics.ListAPIView):
             data["categories"].append({
                 "title": category.title,
                 "photo": category.photo.url if category.photo else "static/placeholder.png",
-                'video': category.video.url if category.video else None,
+#                'video': category.video.url if category.video else "no video",
                 "products": products_list
             })
         return Response(data)

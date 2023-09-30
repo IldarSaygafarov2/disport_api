@@ -9,7 +9,7 @@ class Category(models.Model):
         verbose_name="Фото категории", upload_to="photos/categories/", default=""
     )
 
-    video = models.FileField(verbose_name="Видео", upload_to="categories/video/", null=True, blank=True)
+#    video = models.FileField(verbose_name="Видео", upload_to="categories/video/", null=True, blank=True)
 
     def __str__(self):
         return self.title
@@ -26,6 +26,7 @@ class Product(models.Model):
     price = models.IntegerField(verbose_name="Стоимость продукта")
     body = models.TextField(verbose_name="Описание продукта", default="")
     brand = models.CharField(verbose_name="Бренд", max_length=150, default="")
+    video = models.FileField(verbose_name="Видео", upload_to="categories/video/", null=True, blank=True)
     vendor_code = models.CharField(verbose_name="Артикул", default='', max_length=150)
     gender = models.CharField(verbose_name="Пол", max_length=150, default="")
     preview = models.ImageField(verbose_name="Заставка", upload_to="preview", blank=True, null=True)
@@ -69,7 +70,7 @@ class ProductOption(models.Model):
 
 class ProductOptionItem(models.Model):
     product_option = models.ForeignKey(ProductOption, on_delete=models.CASCADE, related_name="option")
-    name = models.TextField(verbose_name="Дополнительная характеристика", max_length=155)
+    name = models.TextField(verbose_name="Дополнительная характеристика", default='')
 
     class Meta:
         verbose_name = "Дополнительная характеристика"
