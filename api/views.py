@@ -36,10 +36,11 @@ class CategoryListAPIView(generics.ListAPIView):
                 res = []
                 if options:
                     for option in options:
-                        print(option.option.all())
+                        i = option.option.all().first()
+                        print()
                         res.append({
                             "option_category": option.option_main,
-                            "option_items": option.option.all()[0].name
+                            "option_items": i.name if i else 'Не добавили'
                         })
 
                 products_list.append({
