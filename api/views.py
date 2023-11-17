@@ -1,6 +1,6 @@
 import os
 
-from django.http import JsonResponse
+from django.http import JsonResponse, StreamingHttpResponse
 from django.templatetags.static import static
 from rest_framework import generics
 from rest_framework.decorators import api_view
@@ -9,6 +9,7 @@ from helpers import main as funcs
 from core import settings
 from .models import Category, Product
 from .serializer import CategorySerializer, ProductSerializer
+from .services import open_file
 
 
 @api_view(["GET"])
@@ -85,3 +86,14 @@ class ProductDetailAPIView(generics.RetrieveAPIView):
 def get_animations(request):
     print(os.path.join(settings.BASE_DIR, "anim.json"))
     return JsonResponse({"file": static("anim.json")})
+
+
+def get_streaming_video(request, product_pk: str):
+    file, status_code, content_length, content_range = open_file(request, product_pk)
+
+    response = StreamingHttpResponse(file, status=status_code, content_type='video/mp4')
+    response['Accept-Ranges'] = 'bytes'
+    response['Content-Length'] = str(content_length)
+    response['Cache-Control'] = 'no-cache'
+    response['Content-Range'] = content_range
+    return response
