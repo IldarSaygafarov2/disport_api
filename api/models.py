@@ -26,7 +26,6 @@ class Product(models.Model):
     price = models.IntegerField(verbose_name="Стоимость продукта")
     body = models.TextField(verbose_name="Описание продукта", default="")
     brand = models.CharField(verbose_name="Бренд", max_length=150, default="")
-    video = models.FileField(verbose_name="Видео", upload_to="categories/video/", null=True, blank=True)
     vendor_code = models.CharField(verbose_name="Артикул", default='', max_length=150)
     gender = models.CharField(verbose_name="Пол", max_length=150, default="")
     preview = models.ImageField(verbose_name="Заставка", upload_to="preview", blank=True, null=True)

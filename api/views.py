@@ -9,7 +9,9 @@ from helpers import main as funcs
 from core import settings
 from .models import Category, Product
 from .serializer import CategorySerializer, ProductSerializer
-from .services import open_file
+
+
+# from .services import open_file
 
 
 @api_view(["GET"])
@@ -49,8 +51,8 @@ class CategoryListAPIView(generics.ListAPIView):
                         "title": product.title,
                         "price": funcs.format_price(product.price),
                         "description": funcs.remove_html_from_text(product.body),
-                 	"video": product.video.url if product.video else 'no video',
-		        "preview": product.preview.url if product.preview else "static/placeholder.png",
+                        "vendor_code": product.vendor_code,
+                        "preview": product.preview.url if product.preview else "static/placeholder.png",
                         "options": res,
                         "images": [
                             image.photo.url if image.photo else "static/placeholder.png"
@@ -62,7 +64,6 @@ class CategoryListAPIView(generics.ListAPIView):
             data["categories"].append({
                 "title": category.title,
                 "photo": category.photo.url if category.photo else "static/placeholder.png",
-#                'video': category.video.url if category.video else "no video",
                 "products": products_list
             })
         return Response(data)
@@ -88,12 +89,12 @@ def get_animations(request):
     return JsonResponse({"file": static("anim.json")})
 
 
-def get_streaming_video(request, product_pk: str):
-    file, status_code, content_length, content_range = open_file(request, product_pk)
-
-    response = StreamingHttpResponse(file, status=status_code, content_type='video/mp4')
-    response['Accept-Ranges'] = 'bytes'
-    response['Content-Length'] = str(content_length)
-    response['Cache-Control'] = 'no-cache'
-    response['Content-Range'] = content_range
-    return response
+# def get_streaming_video(request, product_pk: str):
+#     file, status_code, content_length, content_range = open_file(request, product_pk)
+#
+#     response = StreamingHttpResponse(file, status=status_code, content_type='video/mp4')
+#     response['Accept-Ranges'] = 'bytes'
+#     response['Content-Length'] = str(content_length)
+#     response['Cache-Control'] = 'no-cache'
+#     response['Content-Range'] = content_range
+#     return response
