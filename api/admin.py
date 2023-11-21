@@ -48,7 +48,7 @@ class ProductAdmin(admin.ModelAdmin):
         (
             "Общее",
             {
-                "fields": ["title", "body", "price", "preview", "video", "brand", "vendor_code", "gender",  "category"]
+                "fields": ["title", "body", "price", "preview", "brand", "vendor_code", "gender",  "category"]
             },
         ),
     ]
