@@ -29,7 +29,8 @@ class Product(models.Model):
     vendor_code = models.CharField(verbose_name="Артикул", default='', max_length=150)
     gender = models.CharField(verbose_name="Пол", max_length=150, default="")
     preview = models.ImageField(verbose_name="Заставка", upload_to="preview", blank=True, null=True)
-
+    video_name = models.CharField(verbose_name="Название видео", max_length=300, blank=True, default=".mp4",
+                                  help_text="Нужно написать название видео до точки. Пример: 'test_video.mp4' ")
     category = models.ForeignKey(
         Category,
         on_delete=models.CASCADE,

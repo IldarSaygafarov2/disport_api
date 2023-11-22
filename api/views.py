@@ -53,6 +53,7 @@ class CategoryListAPIView(generics.ListAPIView):
                         "description": funcs.remove_html_from_text(product.body),
                         "vendor_code": product.vendor_code,
                         "preview": product.preview.url if product.preview else "static/placeholder.png",
+                        "video_name": product.video_name,
                         "options": res,
                         "images": [
                             image.photo.url if image.photo else "static/placeholder.png"
