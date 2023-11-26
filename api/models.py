@@ -1,5 +1,8 @@
 from django.db import models
 
+from imagekit.models import ProcessedImageField
+from imagekit.processors import ResizeToFit
+
 
 class Category(models.Model):
     title = models.CharField(
@@ -28,7 +31,15 @@ class Product(models.Model):
     brand = models.CharField(verbose_name="Бренд", max_length=150, default="")
     vendor_code = models.CharField(verbose_name="Артикул", default='', max_length=150)
     gender = models.CharField(verbose_name="Пол", max_length=150, default="")
-    preview = models.ImageField(verbose_name="Заставка", upload_to="preview", blank=True, null=True)
+    preview = ProcessedImageField(
+        verbose_name="Заставка",
+        upload_to="preview",
+        blank=True,
+        null=True,
+        # processors=[ResizeToFit(width=1000, height=00)],
+        format='JPEG',
+        options={'quality': 70}
+    )
     video_name = models.CharField(verbose_name="Название видео", max_length=300, blank=True, default=".mp4",
                                   help_text="Нужно написать название видео до точки. Пример: 'test_video.mp4' ")
     category = models.ForeignKey(
@@ -52,7 +63,12 @@ class ProductImage(models.Model):
         return f"photos/products/{filename}"
 
     product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name="images", verbose_name="Продукт")
-    photo = models.ImageField(verbose_name="Фото продукта", upload_to=make_folder_path)
+    photo = ProcessedImageField(
+        verbose_name="Фото продукта",
+        upload_to=make_folder_path,
+        options={'quality': 70},
+        format='JPEG'
+    )
 
 
 class ProductOption(models.Model):
